@@ -40,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#Cpp",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -79,8 +79,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 211.5,
-    "collapsed": true
+    "width": 211.5
   },
   "right": {
     "id": "3e86e219dbe34e67",
@@ -185,9 +184,9 @@
   "active": "4b19e4485456911b",
   "lastOpenFiles": [
     "게임개발의길/코테/Do it 알고리즘 코딩 테스트 C++편/첫째마당 - 코딩 테스트 준비하기/03 미리보는 코딩 테스트 오답 노트.md",
-    "게임개발의길/코테/Do it 알고리즘 코딩 테스트 C++편/첫째마당 - 코딩 테스트 준비하기/04 자료구조.md",
     "게임개발의길/코테/Do it 알고리즘 코딩 테스트 C++편/첫째마당 - 코딩 테스트 준비하기/02 코드의 논리 오류를 어떻게 잡을까.md",
     "게임개발의길/코테/Do it 알고리즘 코딩 테스트 C++편/첫째마당 - 코딩 테스트 준비하기/01 어떤 알고리즘으로 풀어야 할까.md",
+    "게임개발의길/코테/Do it 알고리즘 코딩 테스트 C++편/첫째마당 - 코딩 테스트 준비하기/04 자료구조.md",
     "Untitled 1.base",
     "Untitled.base",
     "게임개발의길/CS/이것이 취업을 위한 컴퓨터 과학이다 with CS 기술 면접/컴퓨터 구조/2. 컴퓨터가 이해하는 정보.md",
