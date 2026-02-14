@@ -40,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#review/3-day/260210  ",
+                "query": "tag:#review/7-day/20260221  ",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "게임개발의길/코테/바킹독의 실전 알고리즘 강의/0x04강 백준 오답노트.md",
+                "file": "게임개발의길/코테/바킹독의 실전 알고리즘 강의/0x08강 백준 오답노트.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 0x04강 백준 오답노트"
+              "title": "Outline of 0x08강 백준 오답노트"
             }
           },
           {
