@@ -142,7 +142,7 @@ text = sys.stdin.readline().rstrip('\n')
 
 일반적으로 `rstrip()`을 인자 없이 호출하면 오른쪽의 모든 공백까지 제거됩니다. 입력값 끝의 공백을 보존해야 한다면 `rstrip('\n')`처럼 제거할 문자를 명시합니다.
 
-## 3. 순서 뒤집기
+## 3. 정렬과 순서 변경
 
 ### 3.1 리스트 자체를 뒤집기: `reverse()`
 
@@ -220,6 +220,118 @@ print(numbers)           # [1, 2, 3, 4]
 - 원본 리스트 자체를 바꿀 때: `numbers.reverse()`
 - 원본을 유지하며 역순으로 순회할 때: `reversed(numbers)`
 - 역순으로 복사된 리스트가 바로 필요할 때: `numbers[::-1]`
+
+### 3.4 원본 리스트 정렬: `sort()`
+
+`list.sort()`는 리스트 요소를 오름차순으로 정렬하며 **원본 리스트를 직접 변경**합니다. 반환값은 `None`입니다.
+
+```python
+numbers = [3, 1, 4, 2]
+result = numbers.sort()
+
+print(numbers)  # [1, 2, 3, 4]
+print(result)   # None
+```
+
+`reverse()`와 마찬가지로 반환값을 다시 변수에 저장하면 안 됩니다.
+
+```python
+numbers = [3, 1, 2]
+numbers = numbers.sort()  # 잘못된 사용
+
+print(numbers)  # None
+```
+
+내림차순으로 정렬하려면 `reverse=True`를 지정합니다.
+
+```python
+numbers = [3, 1, 4, 2]
+numbers.sort(reverse=True)
+
+print(numbers)  # [4, 3, 2, 1]
+```
+
+### 3.5 새로운 정렬 리스트 만들기: `sorted()`
+
+`sorted()`는 원본을 변경하지 않고 정렬된 **새 리스트**를 반환합니다. 리스트뿐 아니라 문자열, 튜플, 집합 등 반복 가능한 객체에 사용할 수 있습니다.
+
+```python
+numbers = [3, 1, 4, 2]
+result = sorted(numbers)
+
+print(numbers)  # [3, 1, 4, 2] (원본 유지)
+print(result)   # [1, 2, 3, 4]
+```
+
+```python
+text = "python"
+print(sorted(text))  # ['h', 'n', 'o', 'p', 't', 'y']
+
+values = (3, 1, 2)
+print(sorted(values))  # [1, 2, 3]
+```
+
+입력 객체의 자료형과 관계없이 `sorted()`의 결과는 항상 리스트입니다. 정렬된 문자열이 필요하면 `join()`을 함께 사용합니다.
+
+```python
+text = "python"
+result = ''.join(sorted(text))
+
+print(result)  # hnopty
+```
+
+### 3.6 정렬 기준 지정: `key`
+
+`key`에는 각 요소에서 정렬 기준값을 만드는 함수를 전달합니다.
+
+```python
+words = ['banana', 'kiwi', 'apple']
+words.sort(key=len)
+
+print(words)  # ['kiwi', 'apple', 'banana']
+```
+
+튜플이나 리스트의 특정 값을 기준으로 정렬할 때는 `lambda`를 자주 사용합니다.
+
+```python
+students = [('민수', 80), ('지수', 95), ('철수', 70)]
+students.sort(key=lambda student: student[1])
+
+print(students)
+# [('철수', 70), ('민수', 80), ('지수', 95)]
+```
+
+정렬 기준을 여러 개 지정하려면 `key`에서 튜플을 반환합니다. 앞의 기준이 같을 때 다음 기준을 비교합니다.
+
+```python
+points = [(2, 3), (1, 5), (2, 1), (1, 2)]
+result = sorted(points, key=lambda point: (point[0], point[1]))
+
+print(result)  # [(1, 2), (1, 5), (2, 1), (2, 3)]
+```
+
+숫자 기준 중 일부만 내림차순으로 정렬할 때는 해당 값에 음수를 붙이는 방법을 활용할 수 있습니다.
+
+```python
+# 첫 번째 값은 오름차순, 두 번째 값은 내림차순
+result = sorted(points, key=lambda point: (point[0], -point[1]))
+
+print(result)  # [(1, 5), (1, 2), (2, 3), (2, 1)]
+```
+
+### 3.7 `sort()`와 `sorted()` 핵심 차이
+
+| 구분 | `sort()` | `sorted()` |
+| --- | --- | --- |
+| 형태 | 리스트 메서드 | 내장 함수 |
+| 원본 변경 | 변경함 | 변경하지 않음 |
+| 반환값 | `None` | 정렬된 새 리스트 |
+| 사용 대상 | 리스트 | 반복 가능한 객체 |
+| 내림차순 | `reverse=True` | `reverse=True` |
+| 정렬 기준 | `key=함수` | `key=함수` |
+
+- 원본 리스트를 그대로 정렬해도 될 때: `numbers.sort()`
+- 원본을 유지하거나 리스트 이외의 객체를 정렬할 때: `sorted(values)`
 
 ## 4. 모든 요소에 함수 적용하기: `map()`
 
