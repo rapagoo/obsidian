@@ -672,3 +672,93 @@ print(list(result))  # []
 ```python
 result = list(map(int, ['1', '2', '3']))
 ```
+
+## 6. 팩토리얼과 조합: `math`
+
+`factorial()`과 `comb()`은 `math` 모듈에 포함된 함수이므로 먼저 가져와야 합니다.
+
+```python
+from math import factorial, comb
+```
+
+모듈 전체를 가져온 경우에는 `math.factorial()`, `math.comb()`처럼 사용합니다.
+
+```python
+import math
+
+print(math.factorial(5))
+print(math.comb(5, 2))
+```
+
+### 6.1 팩토리얼 계산: `factorial()`
+
+`factorial(n)`은 1부터 `n`까지의 모든 정수를 곱한 `n!`을 반환합니다.
+
+```python
+from math import factorial
+
+print(factorial(5))  # 5! = 5 × 4 × 3 × 2 × 1 = 120
+print(factorial(0))  # 0! = 1
+```
+
+`n`에는 0 이상의 정수를 전달해야 합니다. 음수를 전달하면 `ValueError`, 정수가 아닌 값을 전달하면 `TypeError`가 발생합니다.
+
+```python
+factorial(-1)   # ValueError
+factorial(3.5)  # TypeError
+```
+
+직접 반복문을 작성할 필요 없이 큰 팩토리얼도 정확한 정수로 계산할 수 있습니다.
+
+```python
+print(factorial(10))  # 3628800
+```
+
+### 6.2 조합의 수 계산: `comb()`
+
+`comb(n, r)`은 서로 다른 `n`개 중 순서를 고려하지 않고 `r`개를 고르는 경우의 수인 조합값을 반환합니다.
+
+```python
+from math import comb
+
+print(comb(5, 2))   # 10
+print(comb(10, 3))  # 120
+print(comb(5, 0))   # 1
+print(comb(5, 5))   # 1
+```
+
+조합은 다음 식과 같습니다.
+
+```text
+nCr = n! / (r! × (n - r)!)
+```
+
+직접 팩토리얼 식을 계산할 수도 있지만, 필요한 값이 조합의 수라면 `comb()`을 사용하는 편이 간단하고 효율적입니다.
+
+```python
+from math import factorial, comb
+
+n = 5
+r = 2
+
+by_factorial = factorial(n) // (factorial(r) * factorial(n - r))
+by_comb = comb(n, r)
+
+print(by_factorial)  # 10
+print(by_comb)       # 10
+```
+
+`n`과 `r`에는 0 이상의 정수를 전달해야 합니다. `r > n`이면 오류가 발생하지 않고 `0`을 반환합니다.
+
+```python
+print(comb(3, 5))  # 0
+```
+
+코딩 테스트에서는 조합 공식을 직접 구현하기보다 다음과 같이 사용할 수 있습니다.
+
+```python
+from math import comb
+
+n, r = map(int, input().split())
+print(comb(n, r))
+```

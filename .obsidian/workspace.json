@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Python memo.md",
+                "file": "Python_PS_note.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Python memo"
+              "title": "Python_PS_note"
             }
           }
         ]
@@ -79,7 +79,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 339.5
+    "width": 256.5
   },
   "right": {
     "id": "3e86e219dbe34e67",
@@ -156,8 +156,8 @@
             "state": {
               "type": "advanced-tables-toolbar",
               "state": {},
-              "icon": "spreadsheet",
-              "title": "Advanced Tables"
+              "icon": "lucide-ghost",
+              "title": "advanced-tables-toolbar"
             }
           },
           {
@@ -193,20 +193,20 @@
   },
   "active": "3f018601e33daaf4",
   "lastOpenFiles": [
+    "Pasted image 20251212141746.png",
+    "Pasted image 20250108215304.png",
+    "Pasted image 20260602152423.png",
+    "Pasted image 20260606220422.png",
+    "Pasted image 20260604214106.png",
+    "Python_PS_note.md",
     "C++/cpp_bootcamp_review.md",
-    "Python memo.md",
     "2026-06-17.md",
     "게임개발의길/코테/코딩살구클럽/1주차/fast_modular_exponentiation_cheatsheet.md",
     "게임개발의길/이득우의 언리얼/Part3/섹션 2. 액터 리플리케이션/6강 액터 리플리케이션 빈도와 연관성.md",
     "게임개발의길/코테/코딩살구클럽/1주차",
     "게임개발의길/코테/코딩살구클럽",
-    "Pasted image 20260606220422.png",
     "게임개발의길/이득우의 언리얼/Part3/섹션 2. 액터 리플리케이션/5강 액터 리플리케이션 기초.md",
-    "Pasted image 20260604214106.png",
-    "Pasted image 20260602152423.png",
     "Pasted image 20260602152049.png",
-    "Pasted image 20251212141746.png",
-    "Pasted image 20250108215304.png",
     "게임개발의길/이득우의 언리얼/Part3/섹션 1. 언리얼 네트워크 멀티플레이어 프레임워크 기초/4강 액터의 역할과 커넥션 핸드셰이킹.md",
     "게임개발의길/이득우의 언리얼/Part3/섹션 2. 액터 리플리케이션",
     "게임개발의길/이득우의 언리얼/Part3/섹션 1. 언리얼 네트워크 멀티플레이어 프레임워크 기초/3강 커넥션과 오너십.md",
@@ -229,7 +229,6 @@
     "게임개발의길/이득우의 언리얼/Part1/섹션 2. 언리얼 오브젝트의 이해/3강 언리얼 C++ 기본 타입과 문자열.md",
     "게임개발의길/이득우의 언리얼/Part1/섹션 2. 언리얼 오브젝트의 이해/2강 언리얼 C++ 코딩규칙.md",
     "게임개발의길/이득우의 언리얼/Part1/섹션 2. 언리얼 오브젝트의 이해/1강 헬로 언리얼!.md",
-    "게임개발의길/이득우의 언리얼/Part2/코드 복습/UNREAL_EMPLOYMENT_CORE_CONCEPTS.md",
     "게임개발의길/이득우의 언리얼/Part2/코드 복습",
     "게임개발의길/무제",
     "게임개발의길/이득우의 언리얼/Part2/섹션 4. 언리얼 게임의 완성",
