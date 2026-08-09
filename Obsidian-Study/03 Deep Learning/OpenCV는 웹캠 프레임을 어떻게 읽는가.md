@@ -39,8 +39,10 @@ cv2.destroyAllWindows()
 
 - [[CNN과 YOLO는 이미지에서 무엇을 찾는가]]
 - [[YOLOv5의 탐지 결과에는 무엇이 들어 있는가]]
+- [[QTimer는 화면을 어떻게 주기적으로 갱신하는가]]
+- [[MediaPipe와 KNN으로 손 제스처 분류하기]]
+- [[PySide6로 실시간 웹캠 화면 만들기]]
 
 ## 출처
 
 - `day0728.ipynb`
-

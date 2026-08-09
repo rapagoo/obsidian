@@ -11,7 +11,7 @@
 ## 핵심 코드
 
 ```python
-detect = result.xyxyn[0].numpy()
+detect = result.xyxyn[0].cpu().numpy()
 
 x1 = int(detect[i][0] * frame.shape[1])
 y1 = int(detect[i][1] * frame.shape[0])
@@ -26,6 +26,7 @@ name = data["names"][int(detect[i][5])]
 
 - `xyxyn`의 `n`은 좌표가 이미지 크기 대비 `0~1`로 정규화됐음을 뜻한다.
 - 실제 pixel 좌표는 x에 이미지 너비, y에 이미지 높이를 곱한다.
+- GPU tensor일 수 있으므로 갱신된 코드처럼 `.cpu().numpy()`로 CPU에 옮긴 뒤 NumPy 배열로 변환할 수 있다.
 - confidence는 `0~1` 값이므로 퍼센트 표시는 `conf * 100`을 사용한다.
 - class 번호 `16`은 수업의 COCO YAML에서 `"dog"`로 확인했다.
 
@@ -36,7 +37,8 @@ name = data["names"][int(detect[i][5])]
 
 - [[OpenCV는 웹캠 프레임을 어떻게 읽는가]]
 - [[CNN과 YOLO는 이미지에서 무엇을 찾는가]]
-- [[OpenCV와 YOLOv5로 객체 탐지하기]]
+- [[OpenCV와 YOLO로 객체 탐지하기]]
+- [[고양이와 강아지 데이터로 YOLO를 학습하기]]
 
 ## 출처
 

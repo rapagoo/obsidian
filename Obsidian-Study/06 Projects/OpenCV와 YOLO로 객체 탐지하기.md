@@ -1,8 +1,8 @@
-# OpenCV와 YOLOv5로 객체 탐지하기
+# OpenCV와 YOLO로 객체 탐지하기
 
 ## 실습 목표
 
-이미지와 웹캠 프레임을 OpenCV로 읽고, YOLOv5 모델이 찾은 객체의 위치·종류·신뢰도를 화면에 표시한다.
+이미지와 웹캠 frame을 OpenCV로 읽고, YOLOv5와 YOLOv8 모델이 찾은 객체의 위치·종류·신뢰도를 화면에 표시한다.
 
 ## 전체 흐름
 
@@ -53,6 +53,16 @@ cap.release()
 cv2.destroyAllWindows()
 ```
 
+갱신된 수업 코드에서는 YOLOv8의 `plot()`으로 탐지 결과가 그려진 frame을 바로 만들었다.
+
+```python
+from ultralytics import YOLO
+
+model = YOLO("yolov8s.pt")
+results = model(frame)
+annotated_frame = results[0].plot()
+```
+
 > [!warning]
 > 정지 이미지 예제에는 `conf`가 0과 1 사이 값인데도 `f"{conf:.2f}%"`로 표시한 셀이 있었다. 백분율로 보이려면 실시간 예제처럼 `conf * 100`을 사용해야 한다.
 
@@ -61,9 +71,9 @@ cv2.destroyAllWindows()
 - [[CNN과 YOLO는 이미지에서 무엇을 찾는가]]
 - [[OpenCV는 웹캠 프레임을 어떻게 읽는가]]
 - [[YOLOv5의 탐지 결과에는 무엇이 들어 있는가]]
+- [[전이 학습은 사전 학습 모델을 어떻게 재사용하는가]]
 - [[while과 for는 언제 사용하는가]]
 
 ## 출처
 
 - `day0728.ipynb`
-

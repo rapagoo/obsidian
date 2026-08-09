@@ -12,7 +12,7 @@
 - `day0723.ipynb` - SVM, 스케일링, 회귀 평가, K-means, PCA, 원-핫 인코딩, 로지스틱 회귀, 혼동 행렬, Keras 신경망
 - `day0724_2.ipynb` - PySide6 위젯·레이아웃·이벤트, 계산기와 날씨 앱, API, Selenium 이미지 수집
 - `day0727.ipynb` - Keras 모델의 K-fold 교차 검증과 `validation_split`
-- `day0728.ipynb` - OpenCV 웹캠, YOLOv5 이미지·실시간 객체 탐지, 탐지 좌표·신뢰도·클래스
+- `day0728.ipynb` - OpenCV 웹캠, YOLOv5·YOLOv8 추론과 custom 학습, MediaPipe 손 landmark, KNN 제스처 분류, 얼굴 벡터·코사인 유사도, PySide6 웹캠 GUI와 PyInstaller 배포
 
 ### PDF
 
@@ -50,6 +50,8 @@ PDF는 노트북 코드에 등장한 개념의 공식 용어와 이론적 맥락
 | 예외 처리는 왜 필요한가 | `day0721.ipynb`, 5일차 PDF | 파일 입출력, API |
 | API 요청과 응답은 어떻게 동작하는가 | `day0721.ipynb`, `day0724_2.ipynb` | 딕셔너리, JSON |
 | 얕은 복사와 깊은 복사는 어떻게 다른가 | `day0722.ipynb` | DataFrame 복사 |
+| QTimer는 화면을 어떻게 주기적으로 갱신하는가 | `day0728.ipynb` | OpenCV, PySide6 |
+| PyInstaller는 Python 프로그램을 어떻게 배포하는가 | `day0728.ipynb` | 모듈, PySide6 |
 
 ### 04 Data Analysis
 
@@ -90,6 +92,8 @@ PDF는 노트북 코드에 등장한 개념의 공식 용어와 이론적 맥락
 | 혼동 행렬의 TP FN FP TN은 무엇인가 | `day0723.ipynb`, 8일차 PDF | 정확도·정밀도·재현율·F1 |
 | 정확도 정밀도 재현율 F1은 어떻게 다른가 | `day0723.ipynb`, 8일차 PDF | 혼동 행렬 |
 | K-fold 교차 검증은 왜 사용하는가 | `day0727.ipynb` | 데이터 분할, 과적합 |
+| 손 랜드마크 좌표는 어떻게 제스처 특징이 되는가 | `day0728.ipynb` | X와 y, KNN |
+| 코사인 유사도는 두 벡터를 어떻게 비교하는가 | `day0728.ipynb` | NumPy, 얼굴 벡터 |
 
 ### 03 Deep Learning
 
@@ -108,6 +112,7 @@ PDF는 노트북 코드에 등장한 개념의 공식 용어와 이론적 맥락
 | CNN과 YOLO는 이미지에서 무엇을 찾는가 | `day0728.ipynb` | OpenCV, YOLO 결과 |
 | OpenCV는 웹캠 프레임을 어떻게 읽는가 | `day0728.ipynb` | YOLO 실시간 탐지 |
 | YOLOv5의 탐지 결과에는 무엇이 들어 있는가 | `day0728.ipynb` | 좌표, confidence, class |
+| 전이 학습은 사전 학습 모델을 어떻게 재사용하는가 | `day0728.ipynb` | YOLO, epoch, batch size |
 
 ### 05 Algorithm
 
@@ -130,7 +135,11 @@ PDF는 노트북 코드에 등장한 개념의 공식 용어와 이론적 맥락
 | 붓꽃 신경망을 K-fold로 검증하기 | `06 Projects` | `day0727.ipynb` |
 | PySide6로 계산기와 날씨 앱 만들기 | `06 Projects` | `day0724_2.ipynb` |
 | Selenium으로 이미지 수집하기 | `06 Projects` | `day0724_2.ipynb` |
-| OpenCV와 YOLOv5로 객체 탐지하기 | `06 Projects` | `day0728.ipynb` |
+| OpenCV와 YOLO로 객체 탐지하기 | `06 Projects` | `day0728.ipynb` |
+| 고양이와 강아지 데이터로 YOLO를 학습하기 | `06 Projects` | `day0728.ipynb` |
+| MediaPipe와 KNN으로 손 제스처 분류하기 | `06 Projects` | `day0728.ipynb` |
+| 얼굴 벡터의 코사인 유사도 비교하기 | `06 Projects` | `day0728.ipynb` |
+| PySide6로 실시간 웹캠 화면 만들기 | `06 Projects` | `day0728.ipynb` |
 
 ## 생성할 인덱스 노트
 
@@ -154,3 +163,5 @@ PDF는 노트북 코드에 등장한 개념의 공식 용어와 이론적 맥락
 - `day0724_2.ipynb`의 `SystemExit: 0`은 GUI 이벤트 루프가 종료되며 Jupyter에 표시된 것으로, 일반적인 실행 실패와 구분한다.
 - 수업 코드의 공개 API 키는 보안상 노트에 복사하지 않고 환경 변수 또는 별도 설정 사용을 경고한다.
 - 실행되지 않은 오탈자(`peak`/`peek`), 이진 탐색 변형의 잘못된 종료 조건, 분류 지표 주석의 잘못된 수식·수치, 3-class 신경망의 잘못된 출력층 실험, `input_dim` 중복, YOLO confidence의 퍼센트 표기를 경고로 기록한다.
+- `day0728.ipynb`의 중단된 YOLO 학습, MediaPipe API 변경, 손 제스처 특징 수 불일치, `face_recognition` 설치 오류와 GUI의 정상 `SystemExit: 0`을 실행 실패 여부에 맞게 구분해 기록한다.
+- YOLOv5와 YOLOv8의 추론은 하나의 실습 노트로 통합하고, custom 학습은 목적과 코드 흐름이 달라 별도 실습으로 분리한다.
